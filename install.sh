@@ -11,13 +11,13 @@ git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 #source the right one, wether remote or local
 set +e
 if [[ $(test -n "$SSH_CLIENT") ]]; then
-	echo "Remote configuration loaded"
-	cp ./.tmux.remote.conf ~
-	tmux source ~/.tmux.remote.conf
-else
 	echo "Local configuration loaded"
 	cp ./.tmux.conf ~
 	tmux source ~/.tmux.conf
+else
+	echo "Remote configuration loaded"
+	cp ./.tmux.remote.conf ~
+	tmux source ~/.tmux.remote.conf
 fi
 set -e
 
