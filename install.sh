@@ -7,7 +7,7 @@ git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 cp ./.tmux.conf ~
 tmux source ~/.tmux.conf
 mkdir -p ~/.config/nvim
-cp -r .config/nvim ~/.config/nvim
+cp -r .config/nvim ~/.config/
 
 # start neovim, packer will tell you it has install plugins
 # then start Mason, :Mason to install all lintings, lsp servers etc..
