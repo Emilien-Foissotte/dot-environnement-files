@@ -3,6 +3,7 @@ set -euo pipefail
 
 # be sure to have install neovim first and tmux
 # sudo apt-get update && sudo apt-get install tmux neovim
+rm -rf ~/.tmux/plugins/tpm
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 cp ./.tmux.conf ~
 tmux source ~/.tmux.conf
