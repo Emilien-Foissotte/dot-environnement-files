@@ -9,5 +9,6 @@ tmux source ~/.tmux.conf
 mkdir -p ~/.config/nvim
 cp -r .config/nvim ~/.config/
 
+# install nodejs npm and default-jre for mason lsp tools
 # start neovim, packer will tell you it has install plugins
 # then start Mason, :Mason to install all lintings, lsp servers etc..
