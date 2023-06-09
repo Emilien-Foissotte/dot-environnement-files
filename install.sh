@@ -3,10 +3,25 @@ set -euo pipefail
 
 # be sure to have install neovim first and tmux
 # sudo apt-get update && sudo apt-get install tmux neovim
+# clone tpm plugin
 rm -rf ~/.tmux/plugins/tpm
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
-cp ./.tmux.conf ~
-tmux source ~/.tmux.conf
+
+# detect local or remote setup, and copy confs
+#source the right one, wether remote or local
+set +e
+if [[ $(test -n "$SSH_CLIENT") ]]; then
+	echo "Remote configuration loaded"
+	cp ./.tmux.remote.conf ~
+	tmux source ~/.tmux.remote.conf
+else
+	echo "Local configuration loaded"
+	cp ./.tmux.conf ~
+	tmux source ~/.tmux.conf
+fi
+set -e
+
+#setup config for neovim
 mkdir -p ~/.config/nvim
 cp -r .config/nvim ~/.config/
 
