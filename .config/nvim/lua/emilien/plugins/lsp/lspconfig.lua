@@ -67,3 +67,10 @@ lspconfig["lua_ls"].setup({
     },
   },
 })
+
+-- configure jedi_language_server
+lspconfig['jedi_language_server'].setup({
+  capabilities=capabilities,
+  on_attach=on_attach,
+}
+)
