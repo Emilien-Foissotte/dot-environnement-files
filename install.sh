@@ -1,8 +1,18 @@
 #!/bin/bash
 set -euo pipefail
 
-# be sure to have install neovim first and tmux
+# be sure to have install tmux
 # sudo apt-get update && sudo apt-get install tmux neovim
+
+# install neovim
+# curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim.appimage
+# chmod u+x nvim.appimage
+# ./nvim.appimage
+#
+## Optional: exposing nvim globally.
+# sudo mv squashfs-root /
+# sudo ln -s /squashfs-root/AppRun /usr/bin/nvim
+# nvim
 
 # clone tpm plugin
 rm -rf ~/.tmux/plugins/tpm
