@@ -13,6 +13,9 @@ set -euo pipefail
 # sudo mv squashfs-root /
 # sudo ln -s /squashfs-root/AppRun /usr/bin/nvim
 # nvim
+#
+# Install python environnement for neovim
+# cd /squashfs-root/ && python3 -m venv env
 
 # clone tpm plugin
 rm -rf ~/.tmux/plugins/tpm
@@ -20,6 +23,7 @@ git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
 # detect local or remote setup, and copy confs
 #source the right one, wether remote or local
+tmux new-session -d -s startup_session
 set +e
 if [[ $(test -n "$SSH_CLIENT") ]]; then
 	echo "Local configuration loaded"
