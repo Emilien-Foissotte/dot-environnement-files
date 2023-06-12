@@ -68,7 +68,11 @@ Modify it in Guake
 ## Neovim setup
 
 ```sh
-sudo apt-get install neovim
+curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim.appimage
+chmod u+x nvim.appimage
+./nvim.appimage
+sudo mv squashfs-root /
+sudo ln -s /squashfs-root/AppRun /usr/bin/nvim
 ```
 
 For `:python` support in Neovim, install the following debian package :
@@ -88,6 +92,13 @@ Open Neovim and install packages with Packer :
 
 ```sh
 nvim ~/.config/init.lua
+```
+
+Install hadolint
+
+```sh
+sudo wget -O /bin/hadolint https://github.com/hadolint/hadolint/releases/download/v2.12.0/hadolint-Linux-(uname -m)
+sudo sudo chmod +x /bin/hadolint
 ```
 
 Exit the file, it should has installed everything
