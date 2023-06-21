@@ -5,7 +5,7 @@
 Install Guake and xclip
 
 ```sh
-sudo apt install guake xclip
+sudo apt install guake xclip fontconfig
 ```
 
 ## Fish shell setup
