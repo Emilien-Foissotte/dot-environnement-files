@@ -8,6 +8,12 @@ Install Guake and xclip
 sudo apt install guake xclip fontconfig
 ```
 
+Update fonts
+
+```sh
+fc-cache -fv
+```
+
 ## Fish shell setup
 
 ```sh
@@ -62,10 +68,21 @@ tmux source ~/.tmux.conf # reload configuration
 ```sh
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/JetBrains/JetBrainsMono/master/install_manual.sh)"
 ```
+Go to https://www.nerdfonts.com/font-downloads
+Donwload the desired font (JetBrainsMono Nerd Font)
+Unpack archive to font 
+
+```sh
+cd /usr/share/fonts && sudo mkdir JetBrainsMono
+unzip downloadedfile.zip
+fc-cache -f -v
+```
 
 Modify it in Guake
 
 ## Neovim setup
+
+### (x64)
 
 ```sh
 curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim.appimage
@@ -75,10 +92,13 @@ sudo mv squashfs-root /
 sudo ln -s /squashfs-root/AppRun /usr/bin/nvim
 ```
 
-For `:python` support in Neovim, install the following debian package :
+### arm [instructions](https://github.com/neovim/neovim/wiki/Building-Neovim)
 
 ```sh
-sudo apt-get install python3-neovim
+sudo apt-get update && sudo apt-get install ninja-build gettext cmake unzip curl
+git clone https://github.com/neovim/neovim && git checkout stable
+make CMAKE_BUILD_TYPE=RelWithDebInfo
+sudo make install
 ```
 
 Configure nvim with bindings and options :
