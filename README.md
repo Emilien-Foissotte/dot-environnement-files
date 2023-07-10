@@ -1,12 +1,23 @@
 # dot-environnement-files
 
+## TODO
+
+- [ ] Make it fully compatible either on MacOs (OS Darwin in bash) or Debian Linux
+
 ## Terminal Emulator Setup
 
+#### Dependencies and Terminal
+### Linux (Debian)
 Install Guake and xclip
 
 ```sh
 sudo apt install guake xclip fontconfig
 ```
+
+### MacOS
+
+Tweak hotkeys profiles to get rapid reaching terminal
+
 
 Update fonts
 
@@ -62,6 +73,8 @@ cd ~ && git clone https://github.com/Emilien-Foissotte/dot-environnement-files.g
 cd dot-environnement-files && cp .tmux.conf ~/  ## copy tmux conf to folder
 tmux source ~/.tmux.conf # reload configuration
 ```
+
+Remember to install specified plugins by triggering a `prefix` + `I`
 
 ## Install some fonts to support icons
 
