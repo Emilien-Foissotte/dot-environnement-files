@@ -81,9 +81,10 @@ Remember to install specified plugins by triggering a `prefix` + `I`
 ```sh
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/JetBrains/JetBrainsMono/master/install_manual.sh)"
 ```
+
 Go to https://www.nerdfonts.com/font-downloads
 Donwload the desired font (JetBrainsMono Nerd Font)
-Unpack archive to font 
+Unpack archive to font
 
 ```sh
 cd /usr/share/fonts && sudo mkdir JetBrainsMono
@@ -139,3 +140,14 @@ Exit the file, it should has installed everything
 Open Neovim again and open Mason with `:Mason`
 
 Everything should be fine now !
+
+# Tweaking P10K
+
+Display VENV even if virtual env activated
+
+Add this to `~/.p10k.zsh`
+
+```sh
+typeset -g POWERLEVEL9K_VIRTUALENV_GENERIC_NAMES=()
+typeset -g POWERLEVEL9K_VIRTUALENV_SHOW_WITH_PYENV=true
+```
