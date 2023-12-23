@@ -122,6 +122,24 @@ mkdir -p ~/.config/nvim/
 cd ~/dev-environment-files/ && cp -r ./.config/nvim/ ~/.config/nvim/
 ```
 
+Create a virtualenv to prepare python3 provider
+for nvim
+
+```sh
+pyenv install 3.12
+pyenv virtualenv 3.12 py3nvim
+pyenv activate py3nvim
+python -m pip 
+python -m pip install pynvim
+pyenv which python  # Note the path
+```
+
+Add this snippet to your `plugins-setup.lua` file
+
+```lua
+--set python3 provider
+vim.api.nvim_set_var('python3_host_prog', 'path/to/py3nvim/bin/python')
+```
 Open Neovim and install packages with Packer :
 
 ```sh
